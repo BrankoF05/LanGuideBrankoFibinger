@@ -15,19 +15,20 @@ namespace LanGuideBrankoFibinger
         {
             InitializeComponent();
         }
-        private async void loginButton_Clicked(object sender, EventArgs e)
-        {
-            bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
-            bool isPasswordEmpty = string.IsNullOrEmpty(passEntry.Text);
-            if (!isEmailEmpty && !isPasswordEmpty)
-            {
-                bool result = await Auth.LoginUser(emailEntry.Text, passEntry.Text);
-                if (result) await Navigation.PushAsync(new HomePage());
-            }
-            else
-            {
-                // do not navigate
-            }
+         private async void loginButton_Clicked(object sender, EventArgs e)
+         {
+            //App.Current.MainPage = new HomePage();
+             bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
+               bool isPasswordEmpty = string.IsNullOrEmpty(passEntry.Text);
+               if (!isEmailEmpty && !isPasswordEmpty)
+               {
+                   bool result = await Auth.LoginUser(emailEntry.Text, passEntry.Text);
+                   if (result) await Navigation.PushAsync(new HomePage());
+               }
+               else
+               {
+                   // do not navigate
+               }
         }
     }
 }

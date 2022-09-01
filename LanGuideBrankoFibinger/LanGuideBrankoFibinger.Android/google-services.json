@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1014231293571",
+    "project_id": "languidebrankofibinger",
+    "storage_bucket": "languidebrankofibinger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014231293571:android:19dc85bd4488c9ce0fc5b6",
+        "android_client_info": {
+          "package_name": "com.companyname.languidebrankofibinger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014231293571-faf8j3uhps7dt6nmeq43t07sb2abrcek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGpz9uiGIK9biIIjjzdmoN1Y9yFBmMrJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014231293571-faf8j3uhps7dt6nmeq43t07sb2abrcek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
