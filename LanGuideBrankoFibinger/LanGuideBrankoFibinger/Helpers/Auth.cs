@@ -8,7 +8,7 @@ namespace LanGuideBrankoFibinger.Helpers
 {
     public interface IAuth
     {
-        Task<bool> RegisterUser(string email, string password);
+        
         Task<bool> LoginUser(string email, string password);
         bool IsAuthenticated();
         string GetCurrentUserId();
@@ -17,19 +17,7 @@ namespace LanGuideBrankoFibinger.Helpers
     internal class Auth
     {
         private static IAuth auth = DependencyService.Get<IAuth>();
-        public static async Task<bool> RegisterUser(string email, string password)
-        {
-            try
-            {
-                return await auth.RegisterUser(email, password);
-            }
-            catch (Exception ex)
-            {
-                await App.Current.MainPage.DisplayAlert("Error registering", ex.Message, "OK");
-                if (ex.Message.Contains("There is no user")) return await auth.RegisterUser(email, password);
-                return false;
-            }
-        }
+       
             public static async Task<bool> LoginUser(string email, string password)
             {
                 try

@@ -55,30 +55,6 @@ namespace LanGuideBrankoFibinger.Droid.Dependencies
             }
         }
 
-        public async Task<bool> RegisterUser(string email, string password)
-        {
-            try
-            {
-                await Firebase.Auth.FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
-                return true;
-            }
-            catch (FirebaseAuthWeakPasswordException ex)
-            {
-                throw new Exception(ex.Message);
-
-            }
-            catch (FirebaseAuthInvalidUserException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            catch (FirebaseAuthUserCollisionException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            catch
-            {
-                throw new Exception("There was an unknown error.");
-            }
-        }
+       
     }
 }
