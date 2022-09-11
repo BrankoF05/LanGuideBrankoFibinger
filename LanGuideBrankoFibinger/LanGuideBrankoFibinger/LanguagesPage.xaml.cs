@@ -14,16 +14,32 @@ namespace LanGuideBrankoFibinger
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LanguagesPage : ContentPage
     {
-        public static string[] Languages = new[]{
-           "Slovenian",
-            "Croatian",
-            "English",
-            };
-        
+    
+
         public LanguagesPage()
         {
             InitializeComponent();
         }
-        
+
+
+           protected override async void OnAppearing()
+           {
+                base.OnAppearing();
+
+                var languages = await Result.GetResults();
+                languageListView.ItemsSource = languages.GroupBy(x => x.language).Select(x => x.First());
+           }
+
+        public async void Return_Clicked3(object sender, EventArgs e)
+        {
+            try
+            {
+                App.Current.MainPage = new HomePage();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

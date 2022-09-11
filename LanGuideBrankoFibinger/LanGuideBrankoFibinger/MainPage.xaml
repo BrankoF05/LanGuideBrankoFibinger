@@ -2,35 +2,67 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LanGuideBrankoFibinger.MainPage"
-             BackgroundColor="LightBlue">
+             BackgroundColor="white">
 
-    <StackLayout VerticalOptions="Center">
-        <!--<Image x:Name="iconImage" Aspect="AspectFit" HorizontalOptions="FillAndExpand" HeightRequest="150"/>-->
+    <ContentPage.Content>
+        <StackLayout>
 
-       <Label Text="LanGuide"
-               TextColor="White"
-               FontSize="50"
-               VerticalTextAlignment="Center"
-               HorizontalOptions="Center"
-                FontAttributes="Bold"
-               Margin="20,20"/>
+            <Grid BackgroundColor="#1E90FF">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="60" ></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" 
+                       Source="icons8College"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       Margin="0, 10, 0, 0"/>
+                <Label Grid.Row="1"
+                       Text="LanGuide"
+                       TextColor="white"
+                       FontSize="50"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       />
+                <Label Grid.Row="2"
+                       Text="LANGUAGE TOOL"
+                       TextColor="white"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       />
+            </Grid>
 
-        <Entry x:Name="emailEntry" 
-               Margin="15" 
-               TextColor="Black" 
-               Placeholder="Email"
-               Keyboard="Email"/>
-        <Entry x:Name="passEntry"
-               Margin="15"
-               TextColor="Black"
-               Placeholder="Password"
-               IsPassword="True"/>
-        <Button x:Name="loginButton" 
-                Text="Login"
-                Style="{StaticResource normalButton}"
-                Clicked="loginButton_Clicked"/>
-        
-    </StackLayout>
+            <Label Text="Login"
+                   TextColor="#3EA2F0"
+                   FontSize="50"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   Margin="20, 75, 20, 50"/>
+
+            <Entry x:Name="emailEntry"
+                   Placeholder="Email Address"
+                   Keyboard="Email"
+                   TextColor="Black"
+                   PlaceholderColor="Black"
+                   Margin="20, 0"/>
+
+            <Entry x:Name="passwordEntry"
+                   Placeholder="Password"
+                   IsPassword="True"
+                   TextColor="Black"
+                   PlaceholderColor="Black"
+                   Margin="20, 0"/>
+
+            <Button x:Name="loginButton"
+                    Margin="100, 25"
+                    Text="Login"
+                    Clicked="loginButton_Clicked"
+                    Style="{StaticResource normalButton}"
+                     />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
 <!--
     <StackLayout>

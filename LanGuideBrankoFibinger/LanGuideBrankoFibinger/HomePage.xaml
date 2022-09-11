@@ -1,10 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:local="clr-namespace:LanGuideBrankoFibinger"
              x:Class="LanGuideBrankoFibinger.HomePage">
-   
-    <local:UsersPage Title="Users" IconImageSource="user.png"/>
-    <local:ResultsPage Title="Results" IconImageSource="writing.png"/>
-    <local:LanguagesPage Title="Languages" IconImageSource="language.png"/>
-</TabbedPage>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightBlue" Spacing="0">
+            <Grid BackgroundColor="#1E90FF">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="60" ></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" 
+                       Source="icons8College"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       Margin="0, 10, 0, 0"/>
+                <Label Grid.Row="1"
+                       Text="LanGuide"
+                       TextColor="white"
+                       FontSize="50"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       />
+                <Label Grid.Row="2"
+                       Text="LANGUAGE TOOL"
+                       TextColor="white"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       />
+            </Grid>
+
+            
+            <Label Text="Welcome to the LanGuide users and result data center" 
+                   FontSize="20" Margin="20,10,20,0" BackgroundColor="LightBlue" 
+                   TextColor="Black" FontAttributes="Bold"></Label>
+            <Label Text="Browse and download data about users and their activity on the LanGuide app" 
+                   FontSize="18" Margin="20,0,20,10" BackgroundColor="LightBlue" TextColor="black"></Label>
+            <Button Clicked="UserButton_Clicked" TextColor="#1E90FF" Image="icons8Users" Text="USERS List of all students who are using the apps"  
+                    TextTransform="None" Margin="20,10,20,10" 
+                    BackgroundColor="White"/>
+            <Button Clicked="ResultButton_Clicked" TextColor="#1E90FF" Image="icons8TestResults.png" 
+                    Text="RESULTS List of all results in solving exercises" BackgroundColor="White" 
+                    TextTransform="None" Margin="20,10,20,10"/>
+            <Button Clicked="LanguageButton_Clicked" TextColor="#1E90FF" Image="icons8Language.png" Text="LANGUAGES List of all languages avaliable on exercises" 
+                    BackgroundColor="White" TextTransform="None" Margin="20,10,20,10"/>
+
+            <Label 
+                   Text="My profile - Logout"
+                   TextColor="Black"
+                   TextDecorations="Underline"
+                   HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLogoutTap"
+                                          NumberOfTapsRequired="1"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

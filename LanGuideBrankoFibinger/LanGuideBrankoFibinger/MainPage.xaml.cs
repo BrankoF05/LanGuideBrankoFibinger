@@ -17,18 +17,18 @@ namespace LanGuideBrankoFibinger
         }
          private async void loginButton_Clicked(object sender, EventArgs e)
          {
-            //App.Current.MainPage = new HomePage();
-             bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
-               bool isPasswordEmpty = string.IsNullOrEmpty(passEntry.Text);
-               if (!isEmailEmpty && !isPasswordEmpty)
-               {
-                   bool result = await Auth.LoginUser(emailEntry.Text, passEntry.Text);
-                   if (result) await Navigation.PushAsync(new HomePage());
-               }
-               else
-               {
-                   // do not navigate
-               }
+
+            bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
+            bool isPasswordEmpty = string.IsNullOrEmpty(passwordEntry.Text);
+
+            if (!isEmailEmpty && !isPasswordEmpty)
+            {
+                bool result = await Auth.LoginUser(emailEntry.Text, passwordEntry.Text);
+                if (result)
+                    App.Current.MainPage = new HomePage();
+            }
+           // await Navigation.PushAsync(new HomePage());
+           
         }
     }
 }
