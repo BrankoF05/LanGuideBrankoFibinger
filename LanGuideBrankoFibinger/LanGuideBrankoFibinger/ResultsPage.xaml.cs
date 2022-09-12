@@ -65,12 +65,7 @@ namespace LanGuideBrankoFibinger
                                          select result;
         }
 
-    /*    private async void ImageButton_Pressed_1(object sender, EventArgs e)
-        {
-            base.OnAppearing();
-            var results = await Result.GetResults();
-            resultListView.ItemsSource = results.OrderBy(result => result.create_time);
-        }*/
+    
 
         private async void SortExercise_Pressed(object sender, EventArgs e)
         {
@@ -106,12 +101,7 @@ namespace LanGuideBrankoFibinger
                                          select result;
         }
 
-      /*  private async void ImageButton_Pressed_6(object sender, EventArgs e)
-        {
-            base.OnAppearing();
-            var results = await Result.GetResults();
-            resultListView.ItemsSource = results.OrderBy(result => result.skill);
-        }*/
+      
 
         private async void SortLanguage_Pressed(object sender, EventArgs e)
         {
@@ -120,12 +110,7 @@ namespace LanGuideBrankoFibinger
             resultListView.ItemsSource = results.OrderBy(result => result.language);
         }
 
-      /*  private async void ImageButton_Pressed_8(object sender, EventArgs e)
-        {
-            base.OnAppearing();
-            var results = await Result.GetResults();
-            resultListView.ItemsSource = results.OrderBy(result => result.result_date);
-        }*/
+    
 
         private async void resultMax_TextChanged(object sender, TextChangedEventArgs e)
         {
